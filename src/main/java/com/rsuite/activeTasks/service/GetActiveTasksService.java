@@ -7,14 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -28,37 +22,12 @@ public class GetActiveTasksService {
 	Map<String, Object> jsonActiveTask = new HashMap<String, Object>();
 	List<ActiveTasks> activeTaskList = new ArrayList<>();
 	
-	@Value("${mysql.datasource.url}")
-	private String mysqlUrl;
-	
-	@Value("${mysql.datasource.driverClassName}")
-	private String mysqlDriver;
-	
-	@Value("${mysql.datasource.username}")
-	private String mysqlUser;
-	
-	@Value("${mysql.datasource.password}")
-	private String mysqlPassword;
+	private final JdbcTemplate jdbcTemplate;
+	 
+    public GetActiveTasksService(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
-	@Autowired
-	JdbcTemplate jdbcTemplate;
-
-	@Bean
-	public DataSource getDatasource() {
-		DriverManagerDataSource datasource = new DriverManagerDataSource();
-		datasource.setDriverClassName(mysqlDriver);
-		datasource.setUrl(mysqlUrl);
-		datasource.setUsername(mysqlUser);
-		datasource.setPassword(mysqlPassword);
-		return datasource;
-	}
-
-	@Bean
-	public JdbcTemplate getJdbcTemplate(DataSource dataSource) {
-		return new JdbcTemplate(dataSource);
-		// return jdbcTemplate;
-	}
-	
 	
 	public String getAllActiveTasks() throws JsonProcessingException {
 		String query = "SELECT * FROM v_activetasks";
