@@ -1,4 +1,4 @@
-package com.rsuite.activeTasks.model;
+package com.rsuite.activetasks.model;
 
 import lombok.Data;
 

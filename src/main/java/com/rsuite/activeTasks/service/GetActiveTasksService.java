@@ -1,4 +1,4 @@
-package com.rsuite.activeTasks.service;
+package com.rsuite.activetasks.service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rsuite.activeTasks.model.ActiveTasks;
+import com.rsuite.activetasks.model.ActiveTasks;
 
 @Service
 public class GetActiveTasksService {

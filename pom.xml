@@ -10,8 +10,8 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rsuite</groupId>
-	<artifactId>activeTasks</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>socr-plugin-api</artifactId>
+	<version>1</version>
 	<name>activeTasks</name>
 	<description>get active tasks</description>
 	<properties>

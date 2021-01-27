@@ -1,4 +1,4 @@
-package com.rsuite.activeTasks.controller;
+package com.rsuite.activetasks.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.rsuite.activeTasks.service.GetActiveTasksService;
+import com.rsuite.activetasks.service.GetActiveTasksService;
 
 @RestController
 @RequestMapping(path = "/", produces = "application/json")

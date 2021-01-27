@@ -1,4 +1,4 @@
-package com.rsuite.activeTasks.config;
+package com.rsuite.activetasks.config;
 
 import javax.sql.DataSource;
 
