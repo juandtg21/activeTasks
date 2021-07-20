@@ -3,7 +3,7 @@ mysql:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/rsuiteActiveTasks?serverTimezone=UTC
     username: root
-    password: Nsa-316+
+    password: 
 
 server:
   port : 8091
